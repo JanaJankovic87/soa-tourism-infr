@@ -1,10 +1,10 @@
 variable "rds_sg_id" {
-  description = "ID security grupe za RDS"
+  description = "RDS security group"
   type        = string
 }
 
 variable "db_password" {
-  description = "RDS master lozinka"
+  description = "RDS master password"
   type        = string
   sensitive   = true
 }

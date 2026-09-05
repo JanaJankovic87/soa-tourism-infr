@@ -40,6 +40,10 @@ NEO4J_PASSWORD=${neo4j_password}
 GRAFANA_CLOUD_API_KEY=${grafana_cloud_api_key}
 ENVEOF
 chmod 600 .env
+
+mkdir -p monitoring/secrets
+printf '%s' "${grafana_cloud_api_key}" > monitoring/secrets/grafana_api_key
+chmod 600 monitoring/secrets/grafana_api_key
 set -x
 
 for svc in api-gateway stakeholders-service blog-service tour-service payment-service follower-service; do

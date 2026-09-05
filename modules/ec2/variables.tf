@@ -1,10 +1,10 @@
 variable "ec2_sg_id" {
-  description = "ID security grupe za EC2"
+  description = "EC2 security group"
   type        = string
 }
 
 variable "key_name" {
-  description = "Ime EC2 key pair-a"
+  description = "EC2 SSH key"
   type        = string
 }
 
@@ -14,80 +14,80 @@ variable "instance_type" {
 }
 
 variable "eip_allocation_id" {
-  description = "Allocation ID postojećeg Elastic IP-a koji treba prikačiti na instancu"
+  description = "Existing Elastic IP"
   type        = string
 }
 
 variable "ec2_public_ip" {
-  description = "Poznata (static) Elastic IP adresa instance, upisuje se u .env aplikacije"
+  description = "Static public IP"
   type        = string
 }
 
 variable "app_repo_url" {
-  description = "Git URL aplikacije koja se klonira i pokreće preko docker-compose.aws.yml"
+  description = "Application git repository"
   type        = string
 }
 
 variable "app_repo_ref" {
-  description = "Git commit/tag/grana na koji se repo fiksira pri deployment-u (radi reproducibilnosti build-a)"
+  description = "Git branch ref"
   type        = string
 }
 
 variable "db_host" {
-  description = "Hostname RDS instance (bez porta)"
+  description = "RDS hostname value"
   type        = string
 }
 
 variable "db_password" {
-  description = "RDS master lozinka"
+  description = "RDS master password"
   type        = string
   sensitive   = true
 }
 
 variable "jwt_secret" {
-  description = "JWT secret za api-gateway/stakeholders-service"
+  description = "JWT signing secret"
   type        = string
   sensitive   = true
 }
 
 variable "blog_mongodb_uri" {
-  description = "MongoDB URI za blog-service"
+  description = "Blog MongoDB URI"
   type        = string
   sensitive   = true
 }
 
 variable "tour_mongodb_uri" {
-  description = "MongoDB URI za tour-service"
+  description = "Tour MongoDB URI"
   type        = string
   sensitive   = true
 }
 
 variable "payment_mongodb_uri" {
-  description = "MongoDB URI za payment-service"
+  description = "Payment MongoDB URI"
   type        = string
   sensitive   = true
 }
 
 variable "neo4j_uri" {
-  description = "Neo4j URI za follower-service"
+  description = "Neo4j connection URI"
   type        = string
   sensitive   = true
 }
 
 variable "neo4j_user" {
-  description = "Neo4j korisničko ime za follower-service"
+  description = "Neo4j username value"
   type        = string
   sensitive   = true
 }
 
 variable "neo4j_password" {
-  description = "Neo4j lozinka za follower-service"
+  description = "Neo4j account password"
   type        = string
   sensitive   = true
 }
 
 variable "grafana_cloud_api_key" {
-  description = "Grafana Cloud API ključ za promtail"
+  description = "Grafana Cloud key"
   type        = string
   sensitive   = true
 }
